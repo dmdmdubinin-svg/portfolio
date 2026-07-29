@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumen Atelier — Boutique Storefront Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./">LUMEN ATELIER</a>
+    <button id="cart-btn" class="cart-btn" type="button">Cart (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">Fine jewelry · demo storefront</p>
+    <h1>Quiet luxury for the scroll.</h1>
+    <p class="sub">A Shopify-style boutique layout with product cards and a working mini-cart.</p>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="section-head">
+      <h2>Featured pieces</h2>
+      <p>Click Add — cart persists in this browser.</p>
+    </div>
+    <div class="grid" id="product-grid"></div>
+  </section>
+
+  <aside id="cart-drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <div class="drawer-top">
+        <h3>Your bag</h3>
+        <button type="button" id="close-cart">Close</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="drawer-foot">
+        <p>Total: <strong id="cart-total">$0</strong></p>
+        <button type="button" id="checkout-btn">Checkout demo</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer>
+    <a href="../../">← Back to DUBININ portfolio</a>
+    <span>Demo case · not a live shop</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

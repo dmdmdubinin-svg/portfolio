@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>North Rim Tyres — Service Site Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./">NORTH RIM</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#book">Book</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="top-cta" href="#book">Book a slot</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="kicker">Fitting · Balancing · Alignment</p>
+      <h1>Tyre shop website that books appointments — not just looks pretty.</h1>
+      <p class="sub">Demo case for service businesses. Clean pages, clear CTAs, working booking form.</p>
+      <a class="btn" href="#book">Reserve service</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <article>
+        <h3>Tyre Fitting</h3>
+        <p>Seasonal changeovers done right. Steel & alloy wheels, run-flat friendly.</p>
+      </article>
+      <article>
+        <h3>Wheel Balancing</h3>
+        <p>Smooth ride after every swap. Computer balancing with road-force check.</p>
+      </article>
+      <article>
+        <h3>Alignment</h3>
+        <p>Protect tyre life and handling. 4-wheel geometry setup.</p>
+      </article>
+      <article>
+        <h3>Puncture Repair</h3>
+        <p>Same-day patch & plug where safe. Honest call if replacement is smarter.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div>
+      <h2>Book an appointment</h2>
+      <p>Pick a service and time. This demo validates fields and shows a confirmation card.</p>
+    </div>
+    <form id="booking-form" novalidate>
+      <label>Name
+        <input name="name" required placeholder="Alex Morgan" />
+      </label>
+      <label>Phone
+        <input name="phone" required placeholder="+64 21 000 0000" />
+      </label>
+      <label>Service
+        <select name="service" required>
+          <option value="">Select…</option>
+          <option>Tyre Fitting</option>
+          <option>Wheel Balancing</option>
+          <option>Alignment</option>
+          <option>Puncture Repair</option>
+        </select>
+      </label>
+      <label>Preferred slot
+        <input name="slot" type="datetime-local" required />
+      </label>
+      <button type="submit">Request booking</button>
+      <p id="form-msg" class="msg" hidden></p>
+    </form>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>What locals say</h2>
+    <div class="quotes">
+      <blockquote>“Booked online, in and out in 40 minutes. No upsell nonsense.”</blockquote>
+      <blockquote>“Clear pricing and they actually explained the alignment printout.”</blockquote>
+      <blockquote>“Finally a tyre place that answers the phone and the form.”</blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <a href="../../">← Back to DUBININ portfolio</a>
+    <span>Demo case · not a real shop</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

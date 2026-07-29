@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DeskBot — Telegram Booking Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="kicker">Demo 03 · Telegram UX</p>
+      <h1>DeskBot</h1>
+    </div>
+    <a class="back" href="../../">← Portfolio</a>
+  </header>
+
+  <main class="layout">
+    <section class="phone" aria-label="Bot simulator">
+      <div class="phone-bar">
+        <span class="avatar">DB</span>
+        <div>
+          <strong>DeskBot</strong>
+          <small>online · booking assistant</small>
+        </div>
+      </div>
+      <div id="chat" class="chat" role="log" aria-live="polite"></div>
+      <div id="actions" class="actions"></div>
+    </section>
+
+    <section class="sheet">
+      <h2>Leads sheet</h2>
+      <p>When a booking completes, the lead appears here — same idea as writing to Google Sheets via n8n.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Service</th>
+              <th>Slot</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody id="leads-body">
+            <tr class="empty-row"><td colspan="4">No leads yet — finish a booking in the bot.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" id="reset-btn" class="reset">Reset demo</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
