@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0c0b"/>
+      <stop offset="100%" stop-color="#141a15"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="20%" stop-color="#ffffff"/>
+      <stop offset="90%" stop-color="#d6ff3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="90" r="260" fill="#d6ff3f" opacity="0.10"/>
+  <text x="80" y="250" font-family="Syne, Arial, sans-serif" font-size="150" font-weight="800" fill="url(#ink)" letter-spacing="-4">DUBININ</text>
+  <text x="86" y="325" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#d7d4cb">Landing pages · stores · Telegram bots</text>
+  <text x="86" y="385" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#9aa094">Fixed price · first draft in 48 hours</text>
+  <rect x="80" y="452" width="330" height="70" fill="#d6ff3f"/>
+  <text x="112" y="498" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="700" fill="#10140c">Click three live demos</text>
+</svg>

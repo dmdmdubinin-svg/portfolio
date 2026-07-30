@@ -3,63 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DUBININ — websites, stores & bots shipped in days</title>
-  <meta name="description" content="Dmitry Dubinin. I build landing pages, Shopify/WordPress stores, Telegram bots and automations — fast, clean, fixed-scope." />
-  <meta property="og:title" content="DUBININ — ship fast" />
-  <meta property="og:description" content="Landing pages, stores, bots & automations — delivered in days." />
+  <title>DUBININ — landing pages, stores & Telegram bots shipped in days</title>
+  <meta name="description" content="I build landing pages, Shopify/WooCommerce stores, Telegram bots and automations. Fixed price, fixed scope, first draft in 48 hours. Three live demos you can click right now." />
+  <meta name="theme-color" content="#0a0c0b" />
+  <link rel="canonical" href="https://dmdmdubinin-svg.github.io/portfolio/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dmdmdubinin-svg.github.io/portfolio/" />
+  <meta property="og:title" content="DUBININ — websites, stores & bots shipped in days" />
+  <meta property="og:description" content="Fixed price, fixed scope, first draft in 48 hours. Click three live demos before you decide." />
+  <meta property="og:image" content="https://dmdmdubinin-svg.github.io/portfolio/assets/og.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DUBININ — websites, stores & bots shipped in days" />
+  <meta name="twitter:description" content="Fixed price, fixed scope, first draft in 48 hours. Click three live demos before you decide." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0c0b'/%3E%3Cpath d='M16 14h16c11 0 18 7 18 18s-7 18-18 18H16z' fill='%23d6ff3f'/%3E%3Cpath d='M27 25h5a7 7 0 0 1 0 14h-5z' fill='%230a0c0b'/%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DUBININ",
+    "description": "Landing pages, Shopify and WooCommerce stores, Telegram bots and automations, delivered on a fixed scope in days.",
+    "url": "https://dmdmdubinin-svg.github.io/portfolio/",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["English", "Russian"],
+    "serviceType": ["Web development", "E-commerce development", "Chatbot development", "Workflow automation"],
+    "sameAs": ["https://github.com/dmdmdubinin-svg"]
+  }
+  </script>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+  <a class="skip-link" href="#work">Skip to demos</a>
 
   <header class="top">
     <a class="logo" href="#top">DUBININ</a>
-    <nav class="nav">
+    <nav class="nav" id="nav" aria-label="Main">
       <a href="#work">Work</a>
-      <a href="#offer">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#process">Process</a>
-      <a class="nav-cta" href="#contact">Hire me</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">Get a quote</a>
     </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Product builder · vibe-coder</p>
+        <p class="status" id="availability">
+          <span class="dot" aria-hidden="true"></span>
+          Taking 2 projects this week
+        </p>
         <h1 class="brand">DUBININ</h1>
         <p class="lead">
-          I ship landing pages, online stores and Telegram bots you can show a client in days —
-          clear scope, fixed delivery, no endless revision loops.
+          I build <strong>landing pages, online stores and Telegram bots</strong> that go live in days —
+          fixed price, fixed scope, first draft in 48 hours.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#work">See live demos</a>
-          <a class="btn ghost" href="#contact">Discuss a project</a>
+          <a class="btn primary" href="#contact">Get a fixed quote</a>
+          <a class="btn ghost" href="#work">Click a live demo</a>
         </div>
-        <p class="trust">Shopify · WordPress · n8n · Telegram bots · scrapers · landing pages</p>
+        <dl class="metrics">
+          <div><dt>48h</dt><dd>to first working draft</dd></div>
+          <div><dt>3</dt><dd>live demos you can test</dd></div>
+          <div><dt>0</dt><dd>hourly surprises</dd></div>
+        </dl>
+        <p class="trust">Shopify · WooCommerce · WordPress · Telegram bots · n8n · scrapers</p>
       </div>
+
       <div class="hero-stage" aria-hidden="true">
         <div class="orbit">
           <span class="chip chip-a">Live in 3–5 days</span>
           <span class="chip chip-b">Fixed scope</span>
-          <span class="chip chip-c">Clean handoff</span>
+          <span class="chip chip-c">Code is yours</span>
         </div>
         <div class="stage-panel">
-          <div class="panel-line"></div>
-          <div class="panel-line short"></div>
-          <div class="panel-grid">
-            <div class="mini-card m1"></div>
-            <div class="mini-card m2"></div>
-            <div class="mini-card m3"></div>
+          <div class="panel-chrome">
+            <i></i><i></i><i></i>
+            <span class="panel-url">your-project.com</span>
           </div>
-          <div class="panel-bar"></div>
+          <div class="panel-body">
+            <div class="panel-line"></div>
+            <div class="panel-line short"></div>
+            <div class="panel-grid">
+              <div class="mini-card m1"></div>
+              <div class="mini-card m2"></div>
+              <div class="mini-card m3"></div>
+            </div>
+            <div class="panel-bar"><span class="panel-bar-fill"></span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="strip" aria-label="Formats">
+    <section class="strip" aria-label="What I build">
       <div class="strip-item"><strong>01</strong><span>Landing / service site</span></div>
       <div class="strip-item"><strong>02</strong><span>Shopify / WooCommerce</span></div>
       <div class="strip-item"><strong>03</strong><span>Telegram bot + CRM</span></div>
@@ -68,144 +114,324 @@
 
     <section id="work" class="section">
       <div class="section-head">
-        <h2>Live demos</h2>
-        <p>Three clickable case studies matched to common Freelancer briefs. Open them, click around, test the flows.</p>
+        <h2>Live demos, not screenshots</h2>
+        <p>
+          Three working builds matched to the briefs clients actually post. Open one, submit the form,
+          add something to the cart, talk to the bot. Everything runs in your browser.
+        </p>
       </div>
 
       <article class="case">
-        <div class="case-visual v-tyre">
-          <div class="case-badge">Demo 01</div>
+        <a class="case-visual v-tyre" href="demos/tyre-shop/">
+          <div class="case-badge">Demo 01 · Service site</div>
+          <div class="case-mock mock-tyre" aria-hidden="true">
+            <span class="mock-bar"></span>
+            <span class="mock-head"></span>
+            <span class="mock-row"></span>
+            <span class="mock-row w70"></span>
+            <span class="mock-btn">Book a slot</span>
+          </div>
           <h3>North Rim Tyres</h3>
-          <p>Service website with booking form and social proof</p>
-          <a class="case-link" href="demos/tyre-shop/">Open demo →</a>
-        </div>
+          <p>Service website that turns visits into booked appointments</p>
+          <span class="case-link">Open demo →</span>
+        </a>
         <div class="case-meta">
-          <h4>What's inside</h4>
+          <h4>What the client gets</h4>
           <ul>
-            <li>Service pages and trust content</li>
-            <li>Booking form with validation</li>
-            <li>Reviews block and strong CTA</li>
-            <li>Mobile-first, fast load</li>
+            <li>Service pages written to answer real objections</li>
+            <li>Booking form with validation and instant confirmation</li>
+            <li>Reviews block and one obvious call to action</li>
+            <li>Mobile-first, loads in under a second</li>
           </ul>
-          <p class="tags">HTML · CSS · JS · UX</p>
-          <p class="match">Fits: Tyre Shop Website, Service Site, Squarespace refresh</p>
+          <p class="tags">HTML · CSS · JS · Conversion UX</p>
+          <p class="match">Typical brief: “Tyre shop website”, “service site”, “Squarespace refresh”</p>
         </div>
       </article>
 
       <article class="case reverse">
-        <div class="case-visual v-boutique">
-          <div class="case-badge">Demo 02</div>
+        <a class="case-visual v-boutique" href="demos/boutique/">
+          <div class="case-badge">Demo 02 · Storefront</div>
+          <div class="case-mock mock-shop" aria-hidden="true">
+            <span class="mock-tile"></span>
+            <span class="mock-tile"></span>
+            <span class="mock-tile"></span>
+            <span class="mock-tile"></span>
+            <span class="mock-cart">Bag · 2</span>
+          </div>
           <h3>Lumen Atelier</h3>
-          <p>Jewelry storefront in a clean Shopify-like layout</p>
-          <a class="case-link" href="demos/boutique/">Open demo →</a>
-        </div>
+          <p>Jewelry storefront with a working cart, ready to move onto Shopify</p>
+          <span class="case-link">Open demo →</span>
+        </a>
         <div class="case-meta">
-          <h4>What's inside</h4>
+          <h4>What the client gets</h4>
           <ul>
-            <li>Product grid and detail cards</li>
-            <li>Cart powered by localStorage</li>
-            <li>Minimal e-commerce UI</li>
-            <li>Ready to migrate onto Shopify</li>
+            <li>Product grid with a real add-to-cart flow</li>
+            <li>Cart that survives a page reload</li>
+            <li>Clean checkout path with no dead ends</li>
+            <li>Structure that maps 1:1 onto Shopify sections</li>
           </ul>
           <p class="tags">Storefront · Cart · Responsive</p>
-          <p class="match">Fits: Shopify store setup, boutique launch, product site</p>
+          <p class="match">Typical brief: “Shopify store setup”, “boutique launch”, “product site”</p>
         </div>
       </article>
 
       <article class="case">
-        <div class="case-visual v-bot">
-          <div class="case-badge">Demo 03</div>
+        <a class="case-visual v-bot" href="demos/booking-bot/">
+          <div class="case-badge">Demo 03 · Bot & automation</div>
+          <div class="case-mock mock-bot" aria-hidden="true">
+            <span class="bubble b-in">What do you need?</span>
+            <span class="bubble b-out">Store audit</span>
+            <span class="bubble b-in">Pick a slot</span>
+            <span class="bubble b-out">Tue 14:30</span>
+          </div>
           <h3>DeskBot</h3>
-          <p>Interactive Telegram-style booking bot simulator</p>
-          <a class="case-link" href="demos/booking-bot/">Open demo →</a>
-        </div>
+          <p>Telegram-style booking bot that writes every lead to a sheet</p>
+          <span class="case-link">Open demo →</span>
+        </a>
         <div class="case-meta">
-          <h4>What's inside</h4>
+          <h4>What the client gets</h4>
           <ul>
-            <li>Onboarding dialogue</li>
-            <li>Service + time slot selection</li>
-            <li>Contact capture</li>
-            <li>Lead export to an on-page “sheet”</li>
+            <li>Guided dialogue instead of a form nobody fills</li>
+            <li>Service and time-slot selection with validation</li>
+            <li>Contact capture at the moment of intent</li>
+            <li>Leads land in a sheet or CRM automatically</li>
           </ul>
-          <p class="tags">Bot UX · JS · Automation logic</p>
-          <p class="match">Fits: hotel bots, n8n flows, Telegram lead bots</p>
+          <p class="tags">Bot UX · JS · n8n logic</p>
+          <p class="match">Typical brief: “hotel booking bot”, “n8n flow”, “Telegram lead bot”</p>
         </div>
       </article>
     </section>
 
-    <section id="offer" class="section offer">
+    <section id="pricing" class="section">
       <div class="section-head">
-        <h2>What I take on</h2>
-        <p>Fixed packages with a clear deliverable. No “we’ll see as we go.”</p>
+        <h2>Packages and price anchors</h2>
+        <p>
+          Every project is quoted as one fixed number before we start. The ranges below cover
+          most briefs — you get the exact figure after a three-line brief, usually the same day.
+        </p>
       </div>
       <div class="offer-grid">
         <div class="offer-item">
           <span class="offer-kicker">01</span>
           <h3>Landing / service site</h3>
-          <p>1–5 pages, responsive layout, forms, basic SEO markup. Usually 2–5 days.</p>
+          <p class="price">from <strong>$250</strong> · 2–5 days</p>
+          <p>1–5 pages, responsive layout, working forms, basic SEO markup, analytics wired in.</p>
         </div>
         <div class="offer-item">
           <span class="offer-kicker">02</span>
-          <h3>Shopify / WordPress store</h3>
-          <p>Theme, catalog, cart, launch — or a focused refresh of an existing store.</p>
+          <h3>Shopify / WooCommerce store</h3>
+          <p class="price">from <strong>$400</strong> · 4–10 days</p>
+          <p>Theme setup, catalog, cart and checkout, payment and shipping config, launch checklist.</p>
         </div>
         <div class="offer-item">
           <span class="offer-kicker">03</span>
-          <h3>Bot + automation</h3>
-          <p>Telegram bot, n8n, hooks into CRM / Sheets / email. Built around your workflow.</p>
+          <h3>Telegram bot + automation</h3>
+          <p class="price">from <strong>$200</strong> · 3–7 days</p>
+          <p>Bot flow, admin notifications, n8n or Make scenarios, hooks into Sheets, CRM or email.</p>
         </div>
         <div class="offer-item">
           <span class="offer-kicker">04</span>
-          <h3>Script / scraper</h3>
-          <p>Excel import tools, exports, one-off utilities with a README and clean handoff.</p>
+          <h3>Script / scraper / fix</h3>
+          <p class="price">from <strong>$80</strong> · 1–3 days</p>
+          <p>Data scraping, Excel and CSV tooling, imports, exports, plus small rescue jobs on existing sites.</p>
         </div>
       </div>
+      <p class="pricing-note">
+        Prices are in USD and exclude platform fees. Rush delivery and ongoing support are quoted separately.
+      </p>
     </section>
 
     <section id="process" class="section process">
       <div class="section-head">
         <h2>How I deliver</h2>
-        <p>A transparent process so the first project feels low-risk.</p>
+        <p>Four steps, no surprises. You always know what happens next and what it costs.</p>
       </div>
       <ol class="steps">
         <li>
-          <strong>Short brief</strong>
-          <span>Goal, references, deadline, budget. No mandatory one-hour call.</span>
+          <strong>1 · Short brief</strong>
+          <span>Send a job link or three lines. No mandatory call, no discovery invoice.</span>
         </li>
         <li>
-          <strong>Fixed quote + deposit</strong>
-          <span>We lock the scope. I work via escrow or upfront deposit.</span>
+          <strong>2 · Fixed quote</strong>
+          <span>One number, one deadline, written scope. We start after escrow or a deposit.</span>
         </li>
         <li>
-          <strong>Draft → revisions → ship</strong>
-          <span>You get a working preview. 1–2 revision rounds inside the brief.</span>
+          <strong>3 · Draft in 48h</strong>
+          <span>You get a working preview link, not a PDF mockup. Two revision rounds included.</span>
         </li>
         <li>
-          <strong>Handoff</strong>
-          <span>Access, a short edit guide, and how to update content yourself.</span>
+          <strong>4 · Handoff</strong>
+          <span>Full access, source code, and a short guide so you can edit content yourself.</span>
         </li>
       </ol>
     </section>
 
-    <section id="contact" class="contact">
-      <p class="eyebrow">Next step</p>
-      <h2>Got a brief? Send it.</h2>
-      <p class="contact-lead">
-        Share a job link or three lines: what you need, deadline, budget.
-        I’ll reply with an estimate and the next open slot.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="https://t.me/" id="tg-link" target="_blank" rel="noopener">Message on Telegram</a>
-        <a class="btn ghost" href="mailto:hello@example.com" id="mail-link">Email</a>
+    <section id="risk" class="section risk">
+      <div class="section-head">
+        <h2>Why hiring me is low-risk</h2>
+        <p>I am early in my freelance track record, so I remove the risk instead of asking you to ignore it.</p>
       </div>
-      <p class="contact-note">GitHub: <a href="https://github.com/dmdmdubinin-svg" target="_blank" rel="noopener">dmdmdubinin-svg</a></p>
+      <div class="risk-grid">
+        <div class="risk-item">
+          <h3>Escrow or milestones</h3>
+          <p>Pay through the platform or split into milestones. Money moves when work lands, not before.</p>
+        </div>
+        <div class="risk-item">
+          <h3>See it before you pay in full</h3>
+          <p>The first working draft arrives in 48 hours. If it is not the direction you wanted, you can walk away.</p>
+        </div>
+        <div class="risk-item">
+          <h3>You own everything</h3>
+          <p>Source code, accounts and assets transfer to you on final payment. No lock-in, no hosting hostage.</p>
+        </div>
+        <div class="risk-item">
+          <h3>Replies within a few hours</h3>
+          <p>Daily written updates while a project runs. You never have to chase me for a status.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq">
+      <div class="section-head">
+        <h2>Straight answers</h2>
+        <p>The questions clients actually ask before sending a first message.</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>You have few reviews. Why should I take the chance?</summary>
+          <p>
+            Because the risk sits on my side, not yours. Work through escrow or milestones, judge the
+            48-hour draft before releasing the bulk of the payment, and check the demos above — they are
+            real running code, and the source is public on GitHub.
+          </p>
+        </details>
+        <details>
+          <summary>How fast can this actually go live?</summary>
+          <p>
+            A landing page is typically 2–5 days end to end. A store is 4–10 days depending on catalog size.
+            A bot with automations is 3–7 days. Rush delivery is possible and is quoted separately.
+          </p>
+        </details>
+        <details>
+          <summary>Do you use AI tools to build this?</summary>
+          <p>
+            Yes, and I am upfront about it. AI speeds up the boring parts; the architecture, testing and
+            final quality are mine. You get readable code, a real handoff document and a person who
+            answers when something breaks.
+          </p>
+        </details>
+        <details>
+          <summary>What if I need changes after launch?</summary>
+          <p>
+            Two revision rounds are included inside the agreed scope. After that, small changes are quoted
+            per task, or you can keep me on a light monthly retainer.
+          </p>
+        </details>
+        <details>
+          <summary>Who owns the code and the accounts?</summary>
+          <p>
+            You do, fully, from final payment onward. Everything is created under your accounts wherever
+            possible, and I hand over credentials at the end.
+          </p>
+        </details>
+        <details>
+          <summary>What do you need from me to start?</summary>
+          <p>
+            The goal of the project, one or two reference links you like, your deadline and your budget
+            range. That is enough for a fixed quote. Content and assets can arrive while I build.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Next step</p>
+        <h2>Build your brief in 30 seconds.</h2>
+        <p class="contact-lead">
+          Fill four fields and I will turn them into a ready-to-send message. Copy it, or send it
+          straight to me — you get a fixed quote and the next open slot, usually the same day.
+        </p>
+        <ul class="contact-points">
+          <li>No call required to get a price</li>
+          <li>Escrow and milestone payments welcome</li>
+          <li>Answer within a few hours, every working day</li>
+        </ul>
+        <p class="contact-note">
+          Prefer the direct route? <a href="https://github.com/dmdmdubinin-svg" target="_blank" rel="noopener">GitHub: dmdmdubinin-svg</a>
+        </p>
+      </div>
+
+      <form class="brief" id="brief-form" novalidate>
+        <div class="field">
+          <label for="brief-type">What do you need?</label>
+          <select id="brief-type" name="type" required>
+            <option value="">Choose one…</option>
+            <option>Landing / service site</option>
+            <option>Shopify / WooCommerce store</option>
+            <option>Telegram bot + automation</option>
+            <option>Script, scraper or a fix</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="brief-goal">What should it do?</label>
+          <textarea id="brief-goal" name="goal" rows="3" required placeholder="One or two sentences. Reference links help a lot."></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="brief-deadline">Deadline</label>
+            <select id="brief-deadline" name="deadline" required>
+              <option value="">Choose one…</option>
+              <option>ASAP (rush)</option>
+              <option>This week</option>
+              <option>Within 2 weeks</option>
+              <option>This month</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="brief-budget">Budget range</label>
+            <select id="brief-budget" name="budget" required>
+              <option value="">Choose one…</option>
+              <option>Under $150</option>
+              <option>$150–400</option>
+              <option>$400–800</option>
+              <option>$800–2000</option>
+              <option>$2000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="brief-contact">How do I reach you?</label>
+          <input id="brief-contact" name="contact" type="text" required placeholder="Telegram @handle or email" />
+        </div>
+
+        <div class="brief-actions">
+          <button class="btn primary" type="submit">Build my brief</button>
+          <button class="btn ghost" type="button" id="brief-reset">Clear</button>
+        </div>
+
+        <output class="brief-output" id="brief-output" hidden>
+          <p class="brief-output-label">Ready to send:</p>
+          <textarea id="brief-text" rows="9" readonly aria-label="Generated brief"></textarea>
+          <div class="brief-actions">
+            <button class="btn primary" type="button" id="copy-brief">Copy brief</button>
+            <a class="btn ghost" id="tg-link" href="https://github.com/dmdmdubinin-svg" target="_blank" rel="noopener">Send on Telegram</a>
+            <a class="btn ghost" id="mail-link" href="#">Send by email</a>
+          </div>
+        </output>
+        <p class="brief-status" id="brief-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <footer class="foot">
-    <span>© 2026 DUBININ</span>
-    <span>Built to sell outcomes, not hours</span>
+    <span>© <span id="year">2026</span> DUBININ</span>
+    <span>Fixed scope · fixed price · code you own</span>
   </footer>
+
+  <a class="mobile-cta" id="mobile-cta" href="#contact">Get a fixed quote</a>
 
   <script src="main.js"></script>
 </body>

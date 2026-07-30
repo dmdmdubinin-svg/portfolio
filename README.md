@@ -1,39 +1,72 @@
-# DUBININ — Portfolio
+# DUBININ — freelance portfolio
 
-English portfolio for freelance clients: landing pages, Shopify/WordPress stores, Telegram bots, and automations.
+A conversion-focused, English-first portfolio for freelance clients: landing pages,
+Shopify/WooCommerce stores, Telegram bots and automations.
 
-**Live demos**
-- [North Rim Tyres](demos/tyre-shop/) — service site + booking form
-- [Lumen Atelier](demos/boutique/) — boutique storefront + cart
-- [DeskBot](demos/booking-bot/) — Telegram booking bot simulator
+**Live:** https://dmdmdubinin-svg.github.io/portfolio/
+
+## Live demos
+
+| Demo | What it proves |
+| --- | --- |
+| [North Rim Tyres](demos/tyre-shop/) | Service site with a validated booking form |
+| [Lumen Atelier](demos/boutique/) | Storefront with a cart that survives reloads |
+| [DeskBot](demos/booking-bot/) | Telegram-style booking bot writing leads to a sheet |
+
+## Before you share the link
+
+Two things are placeholders — set them once and every call to action updates.
+
+1. **Contact.** Open `main.js` and fill the config block at the top:
+
+```js
+const CONTACT = {
+  telegram: "your_handle",
+  email: "you@mail.com",
+};
+```
+
+   To preview without editing files, append query params:
+   `?tg=your_handle&email=you@mail.com`
+
+   If both stay empty, the brief builder still works — it just tells visitors to
+   copy the brief and paste it into the freelance platform instead.
+
+2. **Prices.** The `#pricing` section in `index.html` uses starting figures
+   ($250 / $400 / $200 / $80). Replace them with your own numbers before sending
+   the link to clients.
 
 ## Run locally
 
 ```bash
-# from this folder
 npx --yes serve -l 4173
 ```
 
-Open `http://localhost:4173`
+Then open `http://localhost:4173`.
 
-## Contact overrides
+## How it is built to sell
 
-Append query params to the homepage:
-
-`?tg=your_username&email=you@mail.com`
-
-## GitHub Pages
-
-This repo is intended for GitHub Pages from the `master` branch root (`/`).
-
-After push: **Settings → Pages → Deploy from branch → master / (root)**.
-
-Site URL will be:
-
-`https://dmdmdubinin-svg.github.io/portfolio/`
-
-(or `https://dmdmdubinin-svg.github.io/` if published from a `*.github.io` repo)
+- Hero states the offer, the speed and the risk profile above the fold
+- Live demos instead of screenshots — visitors can test the flows themselves
+- Price anchors so clients self-qualify before writing to you
+- A "why this is low-risk" block that answers the no-track-record objection head on
+- FAQ written around real objections (reviews, speed, AI usage, ownership)
+- Brief builder that turns four fields into a ready-to-send message
+- Every demo page links back to the quote form
 
 ## Stack
 
-Static HTML/CSS/JS. No build step.
+Static HTML, CSS and vanilla JS. No build step, no dependencies, no tracking.
+
+## Files
+
+```
+index.html          landing page
+styles.css          design system + layout
+main.js             nav, reveal, parallax, brief builder
+404.html            GitHub Pages fallback
+robots.txt          crawl rules
+sitemap.xml         single-page sitemap
+assets/og.svg       social preview card
+demos/              three working demo builds
+```

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found — DUBININ</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a0c0b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0c0b'/%3E%3Cpath d='M16 14h16c11 0 18 7 18 18s-7 18-18 18H16z' fill='%23d6ff3f'/%3E%3Cpath d='M27 25h5a7 7 0 0 1 0 14h-5z' fill='%230a0c0b'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Self-contained: GitHub Pages serves this file from any URL depth. */
+    :root { --accent: #d6ff3f; --ink: #f3f1ea; --muted: #9aa094; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1.5rem;
+      color: var(--ink);
+      font-family: "Manrope", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(214, 255, 63, 0.14), transparent 55%),
+        linear-gradient(180deg, #0a0c0b, #0e1210);
+    }
+    main { max-width: 34rem; display: grid; gap: 1.25rem; }
+    h1 {
+      font-family: "Syne", system-ui, sans-serif;
+      font-size: clamp(3.5rem, 14vw, 7rem);
+      line-height: 0.9;
+      margin: 0;
+      color: var(--accent);
+    }
+    p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 1.05rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+    a {
+      display: inline-flex;
+      padding: 0.85rem 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease;
+    }
+    a:hover { transform: translateY(-2px); }
+    .primary { background: var(--accent); color: #10140c; }
+    .ghost { border-color: rgba(243, 241, 234, 0.22); color: var(--ink); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>404</h1>
+    <p>That page moved, or never existed. The live demos and the quote form are still one click away.</p>
+    <div class="row">
+      <a class="primary" href="/portfolio/">Back to portfolio</a>
+      <a class="ghost" href="/portfolio/#work">See live demos</a>
+    </div>
+  </main>
+</body>
+</html>

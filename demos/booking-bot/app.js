@@ -10,15 +10,44 @@
     { id: "audit", label: "Store audit", price: "$129" },
   ];
   const SLOTS = ["Tue 10:00", "Tue 14:30", "Wed 11:00", "Thu 16:00"];
+  const STORAGE_KEY = "deskbot-leads-v2";
+  const MAX_LEADS = 12;
 
-  const state = {
-    step: "start",
-    service: null,
-    slot: null,
-    contact: null,
-  };
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const state = { service: null, slot: null, contact: null };
 
-  let leads = JSON.parse(localStorage.getItem("deskbot-leads") || "[]");
+  let leads = loadLeads();
+
+  function loadLeads() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      if (!Array.isArray(raw)) return [];
+      return raw
+        .filter((l) => l && typeof l === "object")
+        .slice(0, MAX_LEADS)
+        .map((l) => ({
+          time: String(l.time || ""),
+          service: String(l.service || ""),
+          slot: String(l.slot || ""),
+          contact: String(l.contact || ""),
+        }));
+    } catch {
+      return [];
+    }
+  }
+
+  function saveLeads() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+    } catch {
+      /* storage unavailable — the demo still works for this session */
+    }
+  }
+
+  const escapeHtml = (value) =>
+    String(value).replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+    );
 
   function addBubble(text, who = "bot") {
     const el = document.createElement("div");
@@ -26,6 +55,28 @@
     el.textContent = text;
     chat.appendChild(el);
     chat.scrollTop = chat.scrollHeight;
+    return el;
+  }
+
+  /* Clearing here keeps stale buttons from being clickable while the bot "types". */
+  function botSays(text, delay = 520) {
+    clearActions();
+    if (reduced) {
+      addBubble(text, "bot");
+      return Promise.resolve();
+    }
+    const typing = document.createElement("div");
+    typing.className = "bubble bot typing";
+    typing.innerHTML = "<i></i><i></i><i></i>";
+    chat.appendChild(typing);
+    chat.scrollTop = chat.scrollHeight;
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        typing.remove();
+        addBubble(text, "bot");
+        resolve();
+      }, delay);
+    });
   }
 
   function clearActions() {
@@ -48,14 +99,16 @@
     const input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Name + Telegram or email";
-    input.setAttribute("aria-label", "Contact");
+    input.setAttribute("aria-label", "Your contact details");
     const send = document.createElement("button");
     send.type = "button";
     send.className = "send";
     send.textContent = "Send";
+
     const submit = () => {
       const value = input.value.trim();
       if (value.length < 3) {
+        input.classList.add("invalid");
         input.focus();
         return;
       }
@@ -63,12 +116,13 @@
       addBubble(value, "user");
       finish();
     };
+
     send.addEventListener("click", submit);
+    input.addEventListener("input", () => input.classList.remove("invalid"));
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") submit();
     });
-    actions.appendChild(input);
-    actions.appendChild(send);
+    actions.append(input, send);
     input.focus();
   }
 
@@ -81,29 +135,34 @@
       .map(
         (l) => `
       <tr>
-        <td>${l.time}</td>
-        <td>${l.service}</td>
-        <td>${l.slot}</td>
-        <td>${l.contact}</td>
+        <td>${escapeHtml(l.time)}</td>
+        <td>${escapeHtml(l.service)}</td>
+        <td>${escapeHtml(l.slot)}</td>
+        <td>${escapeHtml(l.contact)}</td>
       </tr>`
       )
       .join("");
   }
 
-  function finish() {
+  async function finish() {
     clearActions();
     const lead = {
-      time: new Date().toLocaleString("en-US", { hour: "2-digit", minute: "2-digit", month: "short", day: "numeric" }),
+      time: new Date().toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
       service: state.service.label,
       slot: state.slot,
       contact: state.contact,
     };
-    leads = [lead, ...leads].slice(0, 12);
-    localStorage.setItem("deskbot-leads", JSON.stringify(leads));
+    leads = [lead, ...leads].slice(0, MAX_LEADS);
+    saveLeads();
     renderLeads();
-    addBubble(
-      `Booked.\n${lead.service} · ${lead.slot}\nI'll confirm by message.\n\n(Lead written to the sheet →)`,
-      "bot"
+
+    await botSays(
+      `Booked.\n${lead.service} · ${lead.slot}\nI'll confirm by message.\n\n(Lead written to the sheet →)`
     );
     addBubble("Demo complete", "system");
     buttons([{ id: "again", label: "Book another" }], () => {
@@ -112,21 +171,21 @@
     });
   }
 
-  function pickSlot() {
-    addBubble("Pick a time slot:", "bot");
+  async function pickSlot() {
+    await botSays("Pick a time slot:");
     buttons(
       SLOTS.map((s) => ({ id: s, label: s })),
-      (opt) => {
+      async (opt) => {
         state.slot = opt.label;
         addBubble(opt.label, "user");
-        addBubble("Great. How should I reach you?", "bot");
+        await botSays("Great. How should I reach you?");
         contactInput();
       }
     );
   }
 
-  function pickService() {
-    addBubble("What do you need?", "bot");
+  async function pickService() {
+    await botSays("What do you need?");
     buttons(
       SERVICES.map((s) => ({ id: s.id, label: `${s.label} · ${s.price}`, raw: s })),
       (opt) => {
@@ -137,23 +196,27 @@
     );
   }
 
-  function startFlow(again = false) {
-    state.step = "service";
+  async function startFlow(again = false) {
     state.service = null;
     state.slot = null;
     state.contact = null;
-    if (!again) {
-      chat.innerHTML = "";
-      addBubble("Hi — I’m DeskBot.\nI book short calls and write leads to a sheet (n8n / Sheets pattern).", "bot");
+    clearActions();
+
+    if (again) {
+      await botSays("Let's book another slot.");
     } else {
-      addBubble("Let’s book another slot.", "bot");
+      chat.innerHTML = "";
+      await botSays(
+        "Hi — I'm DeskBot.\nI book short calls and write every lead to a sheet (the n8n / Google Sheets pattern).",
+        300
+      );
     }
     pickService();
   }
 
   resetBtn.addEventListener("click", () => {
     leads = [];
-    localStorage.removeItem("deskbot-leads");
+    saveLeads();
     renderLeads();
     startFlow(false);
   });

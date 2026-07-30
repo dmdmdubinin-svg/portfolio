@@ -3,35 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lumen Atelier — Boutique Storefront Demo</title>
+  <title>Lumen Atelier — boutique storefront demo by DUBININ</title>
+  <meta name="description" content="Demo jewelry storefront with a working cart that survives reloads, built by DUBININ. Shopify-ready structure, minimal e-commerce UI." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#140f0d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23140f0d'/%3E%3Cpath d='M32 14l14 12-14 24-14-24z' fill='%23e8b48a'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="demo-bar">
+    <span>Demo build · Lumen Atelier</span>
+    <span class="demo-bar-links">
+      <a href="../../">← Portfolio</a>
+      <a class="demo-hire" href="../../#contact">Hire me</a>
+    </span>
+  </div>
+
   <header class="top">
     <a class="brand" href="./">LUMEN ATELIER</a>
-    <button id="cart-btn" class="cart-btn" type="button">Cart (<span id="cart-count">0</span>)</button>
+    <button id="cart-btn" class="cart-btn" type="button" aria-haspopup="dialog">
+      Bag (<span id="cart-count">0</span>)
+    </button>
   </header>
 
-  <section class="hero">
-    <p class="kicker">Fine jewelry · demo storefront</p>
-    <h1>Quiet luxury for the scroll.</h1>
-    <p class="sub">A Shopify-style boutique layout with product cards and a working mini-cart.</p>
-  </section>
+  <main>
+    <section class="hero">
+      <p class="kicker">Fine jewelry · demo storefront</p>
+      <h1>Quiet luxury for the scroll.</h1>
+      <p class="sub">A Shopify-style boutique layout with product cards and a cart that survives a page reload.</p>
+    </section>
 
-  <section class="catalog" id="catalog">
-    <div class="section-head">
-      <h2>Featured pieces</h2>
-      <p>Click Add — cart persists in this browser.</p>
-    </div>
-    <div class="grid" id="product-grid"></div>
-  </section>
+    <section class="catalog" id="catalog">
+      <div class="section-head">
+        <h2>Featured pieces</h2>
+        <p>Add a few items, refresh the page, and the bag is still there.</p>
+      </div>
+      <div class="grid" id="product-grid"></div>
+      <p class="disclaimer">Sample catalog for demonstration — this is a portfolio build, not a real shop.</p>
+    </section>
+  </main>
 
-  <aside id="cart-drawer" class="drawer" aria-hidden="true">
+  <div id="cart-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Shopping bag" aria-hidden="true">
     <div class="drawer-panel">
       <div class="drawer-top">
-        <h3>Your bag</h3>
+        <h2>Your bag</h2>
         <button type="button" id="close-cart">Close</button>
       </div>
       <div id="cart-items" class="cart-items"></div>
@@ -39,12 +57,13 @@
         <p>Total: <strong id="cart-total">$0</strong></p>
         <button type="button" id="checkout-btn">Checkout demo</button>
       </div>
+      <p class="drawer-msg" id="drawer-msg" role="status" aria-live="polite"></p>
     </div>
-  </aside>
+  </div>
 
   <footer>
     <a href="../../">← Back to DUBININ portfolio</a>
-    <span>Demo case · not a live shop</span>
+    <span>Want a store like this? <a href="../../#contact">Get a fixed quote</a></span>
   </footer>
   <script src="app.js"></script>
 </body>

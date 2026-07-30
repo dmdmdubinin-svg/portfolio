@@ -18,6 +18,30 @@ body {
     var(--bg);
 }
 a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.demo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  background: #0f0b09;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.demo-bar-links { display: flex; align-items: center; gap: 0.9rem; }
+.demo-bar a { color: var(--ink); }
+.demo-bar a:hover { color: var(--accent); }
+.demo-hire {
+  padding: 0.3rem 0.65rem;
+  background: var(--accent);
+  color: #2a1a12 !important;
+  font-weight: 700;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -109,13 +133,16 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background: rgba(0,0,0,0.45);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
   z-index: 30;
 }
 .drawer.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition: opacity 0.25s ease, visibility 0s;
 }
 .drawer-panel {
   position: absolute;
@@ -138,7 +165,10 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 0.75rem;
 }
-.drawer-top h3 { margin: 0; font-family: var(--display); font-size: 1.6rem; }
+.drawer-top h2 { margin: 0; font-family: var(--display); font-size: 1.7rem; }
+#checkout-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.drawer-msg { margin: 0.8rem 0 0; color: var(--accent); font-size: 0.88rem; line-height: 1.45; }
+.disclaimer { margin: 1.5rem 0 0; color: var(--muted); font-size: 0.82rem; }
 .drawer-top button, .cart-items button {
   background: transparent;
   border: 1px solid var(--line);
@@ -179,4 +209,12 @@ footer a { color: var(--accent); }
 }
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
