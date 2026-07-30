@@ -21,16 +21,16 @@ Two things are placeholders — set them once and every call to action updates.
 
 ```js
 const CONTACT = {
-  telegram: "your_handle",
-  email: "you@mail.com",
+  telegram: "Unit_556",
+  email: "",
 };
 ```
 
-   To preview without editing files, append query params:
-   `?tg=your_handle&email=you@mail.com`
+   Telegram is live. Add an email address to switch on the "Send by email" button —
+   until then it stays hidden and the Telegram route handles everything.
 
-   If both stay empty, the brief builder still works — it just tells visitors to
-   copy the brief and paste it into the freelance platform instead.
+   To preview other values without editing files, append query params:
+   `?tg=your_handle&email=you@mail.com`
 
 2. **Prices.** The `#pricing` section in `index.html` uses starting figures
    ($250 / $400 / $200 / $80). Replace them with your own numbers before sending

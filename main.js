@@ -3,7 +3,7 @@
    You can also test without editing: append ?tg=handle&email=you@mail.com
    --------------------------------------------------------------- */
 const CONTACT = {
-  telegram: "",
+  telegram: "Unit_556",
   email: "",
 };
 
@@ -16,6 +16,17 @@ const CONTACT = {
   const params = new URLSearchParams(window.location.search);
   const telegram = (params.get("tg") || CONTACT.telegram || "").replace(/^@/, "").trim();
   const email = (params.get("email") || CONTACT.email || "").trim();
+
+  const tgDirect = document.getElementById("tg-direct");
+  const tgDirectWrap = document.getElementById("tg-direct-wrap");
+  if (tgDirect && tgDirectWrap) {
+    if (telegram) {
+      tgDirect.href = `https://t.me/${telegram}`;
+      tgDirect.textContent = `Telegram @${telegram}`;
+    } else {
+      tgDirectWrap.hidden = true;
+    }
+  }
 
   /* ---------- footer year ---------- */
 
